@@ -1,0 +1,13 @@
+zuul:
+  routes:
+    baidu:
+      path: /baidu/**
+      url: http://127.0.0.1:8181/hello
+  ratelimit:
+    enabled: true #default false
+    behind-proxy: false #default false
+    policies:
+      baidu:
+        limit: 1
+        refresh-interval: 60 #default value (in seconds)
+        type: url
